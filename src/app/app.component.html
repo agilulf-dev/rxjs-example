@@ -1,25 +1,43 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/rxjs-logo.png" width="30" height="30" alt="RxjsLogo">Rxjs Examples
-        </a>
-      <li class="nav-item">
-        <a class="nav-link"
-           [routerLink]="['/home']"
-           routerLinkActive="active">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-           [routerLink]="['/examples']"
-           routerLinkActive="active"
-           [routerLinkActiveOptions]="{exact : true}">Examples</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse justify-content-md-left" id="app-navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="navbar-brand" [routerLink]="['/home']">
+              <img src="./assets/rxjs-logo.png" alt="RxjsLogo">Rxjs Examples
+            </a>
+          <li class="nav-item">
+            <a class="nav-link"
+               [routerLink]="['/home']"
+               routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               [routerLink]="['/examples']"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact : true}">Examples</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 <main role="main" class="container">
   <router-outlet></router-outlet>
 </main>
+
+<footer class="footer mt-auto py-1 bg-light fixed-bottom">
+  <div class="container d-flex justify-content-center">
+    <p>
+      Made with
+      <img width="20" height="20" src="./assets/angular-logo.svg" alt="AngularLogo">
+      themed with
+      <img width="20" height="20" src="./assets/bootstrap-logo.svg" alt="BootstrapLogo">
+      and at last, but not least, with tons of
+      <i class="bi bi-heart-fill"
+         style="color: crimson;">
+      </i>
+    </p>
+  </div>
+</footer>
