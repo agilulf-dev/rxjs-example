@@ -1,1 +1,34 @@
-<p>examples</p>
+<div class="mt-5">
+  <accordion [isAnimated]="true">
+    <accordion-group heading="Observable" (isOpenChange)="accordionIsOpen($event)">
+      <p>Open browser console and start observable!</p>
+      <p>
+        <button type="button" class="btn btn-primary" (click)="startObservable($event)">
+          Start
+        </button>
+        standard observable
+      </p>
+      <p>
+        <button type="button" class="btn btn-danger" (click)="observableWithError($event)">
+          Start
+        </button>
+        observable with error
+      </p>
+      <p>
+        <button type="button" class="btn btn-info" (click)="observableOf($event)">
+          Start
+        </button>
+        observable <i>of()</i>
+      </p>
+    </accordion-group>
+    <accordion-group heading="Another group">
+      <p>Some content</p>
+    </accordion-group>
+    <accordion-group heading="Another group">
+      <p>Some content</p>
+    </accordion-group>
+    <accordion-group heading="Another group">
+      <p>Some content</p>
+    </accordion-group>
+  </accordion>
+</div>
