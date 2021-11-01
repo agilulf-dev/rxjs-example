@@ -1,6 +1,6 @@
 <div class="mt-5">
   <accordion [isAnimated]="true">
-    <accordion-group heading="Observable" (isOpenChange)="accordionIsOpen($event)">
+    <accordion-group heading="Observer/Observable" (isOpenChange)="accordionIsOpen($event)">
       <p>Open browser console and start observable!</p>
       <p>
         <button type="button" class="btn btn-primary" (click)="startObservable($event)">
@@ -21,11 +21,26 @@
         observable <i>of()</i>
       </p>
     </accordion-group>
-    <accordion-group heading="Another group">
-      <p>Some content</p>
+    <accordion-group heading="Map operator">
+      <p>
+        <button type="button" class="btn btn-primary" (click)="observableWithMap($event)">
+          Map
+        </button>
+      </p>
     </accordion-group>
-    <accordion-group heading="Another group">
-      <p>Some content</p>
+    <accordion-group heading="Filter operator">
+      <p>
+        <button type="button" class="btn btn-primary" (click)="observableWithFilter($event)">
+          Filter
+        </button>
+        a value
+      </p>
+      <p>
+        <button type="button" class="btn btn-primary" (click)="filterGreaterValues($event)">
+          Filter
+        </button>
+        with threshold
+      </p>
     </accordion-group>
     <accordion-group heading="Another group">
       <p>Some content</p>

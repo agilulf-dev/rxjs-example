@@ -1,10 +1,12 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Observable, of, Subscription} from 'rxjs';
+import {filter, map} from "rxjs/operators";
 
 @Component({
   selector: 'app-examples',
   templateUrl: './examples.component.html',
-  styleUrls: ['./examples.component.scss']
+  styleUrls: ['./examples.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplesComponent {
 
@@ -65,17 +67,8 @@ export class ExamplesComponent {
 
   observableOf($event: MouseEvent): void {
     if ($event) {
-      this.subscriberOf = this.ofObservable.subscribe({
-        next(value) {
-          console.log('Value: [%s]', value);
-        },
-        error(err) {
-          console.error('Something wrong occurred: "%s"', err);
-        },
-        complete() {
-          console.log('Completed!');
-        }
-      });
+      this.subscriberOf =
+        this.ofObservable.subscribe(value => console.log('Value: [%s]', value));
     }
   }
 
@@ -84,6 +77,41 @@ export class ExamplesComponent {
       this.subscriber.unsubscribe();
       this.subscriberWithError.unsubscribe();
       this.subscriberOf.unsubscribe();
+    }
+  }
+
+  /**
+   * To use the operators below is used pipe() function.
+   * It is the assembly line from your observable data through your operators.
+   */
+
+  observableWithMap($event: MouseEvent): void {
+    const numberForMap = 10;
+    if ($event) {
+      console.log('Sum up "%s" to values with map operator', numberForMap);
+      of(1, 2, 3, 4, 5).pipe(map(value => value + numberForMap))
+      .subscribe(value => console.log('Value: [%s]', value));
+    }
+  }
+
+  /**
+   * Filter operator exclude values that not match with the condition
+   */
+  observableWithFilter($event: MouseEvent): void {
+    const excludedValue = 10;
+    if ($event) {
+      console.log('Exclude value "%s" with filter', excludedValue);
+      of(10, 20, 10, 30, 40, 50).pipe(filter(value => value !== excludedValue))
+      .subscribe(value => console.log('Value: [%s]', value));
+    }
+  }
+
+  filterGreaterValues($event: MouseEvent): void {
+    const threshold = 30;
+    if ($event) {
+      console.log('Print values greater than "%s" with filter', threshold);
+      of(10, 15, 20, 25, 30, 40, 50).pipe(filter(value => value > threshold))
+      .subscribe(value => console.log('Value: [%s]', value));
     }
   }
 }
