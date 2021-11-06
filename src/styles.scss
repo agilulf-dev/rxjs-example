@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap&family=Caveat&display=swap');
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
@@ -14,3 +14,8 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
+blockquote {
+  font-size: 50px;
+  font-family: 'Caveat', sans-serif;
+  font-weight: normal;
+}

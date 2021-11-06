@@ -3,8 +3,8 @@ import {Router} from '@angular/router';
 
 @Component({
   template: `<div (click)="goToHomepage()">
-    <h1>404 Page not found!</h1></div>
-    `
+    <h1 class="mt-5">404 Page not found!</h1></div>
+  `
 })
 export class PageNotFoundComponent {
   constructor(private router: Router) { }
