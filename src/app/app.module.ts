@@ -8,6 +8,8 @@ import {HomeComponent} from './home/home.component';
 import {ExamplesComponent} from './examples/examples.component';
 import {AccordionModule} from "ngx-bootstrap/accordion";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
+import {ExamplesService} from "./examples/examples.service";
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ExamplesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,7 +1,7 @@
 <div class="mt-5">
+  <h1>Open browser console and start observable!</h1>
   <accordion [isAnimated]="true">
     <accordion-group heading="Observer/Observable" (isOpenChange)="accordionIsOpen($event)">
-      <p>Open browser console and start observable!</p>
       <p>
         <button type="button" class="btn btn-primary" (click)="startObservable($event)">
           Start
@@ -42,8 +42,12 @@
         with threshold
       </p>
     </accordion-group>
-    <accordion-group heading="Another group">
-      <p>Some content</p>
+    <accordion-group heading="HTTP Get">
+      <p>
+        <button type="button" class="btn btn-primary" (click)="getRandomCharacter($event)">
+          Get
+        </button>
+      </p>
     </accordion-group>
   </accordion>
 </div>

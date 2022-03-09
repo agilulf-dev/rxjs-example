@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Observable, of, Subscription} from 'rxjs';
 import {filter, map} from "rxjs/operators";
+import {ExamplesService} from "./examples.service";
 
 @Component({
   selector: 'app-examples',
@@ -13,6 +14,9 @@ export class ExamplesComponent {
   subscriber = new Subscription();
   subscriberWithError = new Subscription();
   subscriberOf = new Subscription();
+
+  constructor(private service: ExamplesService) {
+  }
 
   /**
    * 'of' allows you to deliver values in a sequence
@@ -111,7 +115,13 @@ export class ExamplesComponent {
     if ($event) {
       console.log('Print values greater than "%s" with filter', threshold);
       of(10, 15, 20, 25, 30, 40, 50).pipe(filter(value => value > threshold))
-      .subscribe(value => console.log('Value: [%s]', value));
+        .subscribe(value => console.log('Value: [%s]', value));
+    }
+  }
+
+  getRandomCharacter($event: MouseEvent) {
+    if ($event) {
+      this.service.randomCharacter$.subscribe(value => console.log(value));
     }
   }
 }
