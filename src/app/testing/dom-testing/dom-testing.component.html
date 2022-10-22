@@ -1,0 +1,5 @@
+<p>dom-testing works!</p>
+<button type="button" class="btn btn-primary" (click)="this.isVisible = !this.isVisible">toggle</button>
+<div class="container" *ngIf="this.isVisible">
+  <code>I'm visible!</code>
+</div>

@@ -1,53 +1,51 @@
-<div class="mt-5">
-  <h1>Open browser console and start observable!</h1>
-  <accordion [isAnimated]="true">
-    <accordion-group heading="Observer/Observable" (isOpenChange)="accordionIsOpen($event)">
-      <p>
-        <button type="button" class="btn btn-primary" (click)="startObservable($event)">
-          Start
-        </button>
-        standard observable
-      </p>
-      <p>
-        <button type="button" class="btn btn-danger" (click)="observableWithError($event)">
-          Start
-        </button>
-        observable with error
-      </p>
-      <p>
-        <button type="button" class="btn btn-info" (click)="observableOf($event)">
-          Start
-        </button>
-        observable <i>of()</i>
-      </p>
-    </accordion-group>
-    <accordion-group heading="Map operator">
-      <p>
-        <button type="button" class="btn btn-primary" (click)="observableWithMap($event)">
-          Map
-        </button>
-      </p>
-    </accordion-group>
-    <accordion-group heading="Filter operator">
-      <p>
-        <button type="button" class="btn btn-primary" (click)="observableWithFilter($event)">
-          Filter
-        </button>
-        a value
-      </p>
-      <p>
-        <button type="button" class="btn btn-primary" (click)="filterGreaterValues($event)">
-          Filter
-        </button>
-        with threshold
-      </p>
-    </accordion-group>
-    <accordion-group heading="HTTP Get">
-      <p>
-        <button type="button" class="btn btn-primary" (click)="getRandomCharacter($event)">
-          Get
-        </button>
-      </p>
-    </accordion-group>
-  </accordion>
-</div>
+<h1>Open browser console and start observable!</h1>
+<accordion [isAnimated]="true">
+  <accordion-group heading="Observer/Observable" (isOpenChange)="accordionIsOpen($event)">
+    <p>
+      <button type="button" class="btn btn-primary" (click)="startObservable($event)">
+        Start
+      </button>
+      standard observable
+    </p>
+    <p>
+      <button type="button" class="btn btn-danger" (click)="observableWithError($event)">
+        Start
+      </button>
+      observable with error
+    </p>
+    <p>
+      <button type="button" class="btn btn-info" (click)="observableOf($event)">
+        Start
+      </button>
+      observable <i>of()</i>
+    </p>
+  </accordion-group>
+  <accordion-group heading="Map operator">
+    <p>
+      <button type="button" class="btn btn-primary" (click)="observableWithMap($event)">
+        Map
+      </button>
+    </p>
+  </accordion-group>
+  <accordion-group heading="Filter operator">
+    <p>
+      <button type="button" class="btn btn-primary" (click)="observableWithFilter($event)">
+        Filter
+      </button>
+      a value
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary" (click)="filterGreaterValues($event)">
+        Filter
+      </button>
+      with threshold
+    </p>
+  </accordion-group>
+  <accordion-group heading="HTTP Get">
+    <p>
+      <button type="button" class="btn btn-primary" (click)="getRandomCharacter($event)">
+        Get
+      </button>
+    </p>
+  </accordion-group>
+</accordion>

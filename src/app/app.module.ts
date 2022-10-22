@@ -10,13 +10,15 @@ import {AccordionModule} from "ngx-bootstrap/accordion";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import {ExamplesService} from "./examples/examples.service";
+import {TestingComponent} from "./testing/testing.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     HomeComponent,
-    ExamplesComponent
+    ExamplesComponent,
+    TestingComponent,
   ],
   imports: [
     BrowserModule,

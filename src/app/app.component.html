@@ -18,12 +18,18 @@
                routerLinkActive="active"
                [routerLinkActiveOptions]="{exact : true}">Examples</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               [routerLink]="['/testing']"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact : true}">Testing</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
-<main role="main" class="container">
+<main role="main" class="container mt-5">
   <router-outlet></router-outlet>
 </main>
 

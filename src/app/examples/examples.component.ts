@@ -94,7 +94,7 @@ export class ExamplesComponent {
     if ($event) {
       console.log('Sum up "%s" to values with map operator', numberForMap);
       of(1, 2, 3, 4, 5).pipe(map(value => value + numberForMap))
-      .subscribe(value => console.log('Value: [%s]', value));
+        .subscribe(value => console.log('Value: [%s]', value));
     }
   }
 
@@ -106,7 +106,7 @@ export class ExamplesComponent {
     if ($event) {
       console.log('Exclude value "%s" with filter', excludedValue);
       of(10, 20, 10, 30, 40, 50).pipe(filter(value => value !== excludedValue))
-      .subscribe(value => console.log('Value: [%s]', value));
+        .subscribe(value => console.log('Value: [%s]', value));
     }
   }
 

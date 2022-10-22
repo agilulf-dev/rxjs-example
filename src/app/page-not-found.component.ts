@@ -1,15 +1,10 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
-  template: `<div (click)="goToHomepage()">
-    <h1 class="mt-5">404 Page not found!</h1></div>
+  template: `
+    <blockquote>404 Page not found!</blockquote>
+    <button type="button" class="btn btn-link" routerLink="/home">Home</button>
   `
 })
 export class PageNotFoundComponent {
-  constructor(private router: Router) { }
-
-  goToHomepage() {
-    this.router.navigate(['']);
-  }
 }
